@@ -19,6 +19,21 @@
 
     <main class="container mx-auto min-w-min max-w-3xl">
 
+        @auth
+            <nav class="flex justify-end mb-10">
+                <div class="flex gap-2">
+                    <p class="font-bold">{{ auth()->user()->name }}</p>
+                    <p>|</p>
+                    <form action="{{ route('auth.destroy') }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button>Logout</button>
+                    </form>
+
+                </div>
+            </nav>
+        @endauth
+
 
         {{ $slot }}
 
