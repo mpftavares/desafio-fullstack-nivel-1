@@ -1,5 +1,7 @@
+npm i
+docker compose up
+php artisan migrate --seed
 php artisan serve
-php artisan db:seed
 
 username: mi@example.com
 password: 123456
